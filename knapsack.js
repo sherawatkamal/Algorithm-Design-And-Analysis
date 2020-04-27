@@ -5,16 +5,16 @@ function knapsack(obj, max_cost) {
     }
     
     arr.sort(function(a,b) {
-        if(a.a == b.b) { // lower cost breaks tie
+        if(a.a == b.b) { 
             return a.c - b.c;
         }
-        return b.b - a.b; // Consider highest value first.
+        return b.b - a.b; 
     });
     var memo = {};
     let ret = knap(arr, max_cost, 0, memo);
     console.log(Object.keys(memo).length + " calls.");
 
-    for(var i=0; i<ret[0].length; i++) { // Name the winners.
+    for(var i=0; i<ret[0].length; i++) {
         ret[0][i] = arr[ret[0][i]].n;
     }
 
